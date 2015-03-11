@@ -114,5 +114,8 @@ function pagerank(G, params) {
 }
 
 // test
-//var xs = pagerank({1: [2, 3, 4], 2: [3], 3: [4], 4: []}, {alpha: 0.9});
-//console.log(xs);
+//var scores = pagerank({1: [2, 3, 4], 2: [3], 3: [4], 4: []}, {alpha: 0.9});
+//console.log(scores);
+//
+//var scores = pagerank({'foo': ['bar', 'hoge'], 'bar': [], 'hoge': ['foo']}, {});
+//console.log(scores);

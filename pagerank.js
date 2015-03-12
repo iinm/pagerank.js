@@ -6,6 +6,7 @@
 function pagerank(G, params) {
 
   // set default parameters
+  if (params == null) params = {};
   if (params.alpha == null) params.alpha = 0.85;
   if (params.tol == null) params.tol = 1.0e-6;
   if (params.max_iter == null) params.max_iter = 100;
@@ -118,5 +119,5 @@ module.exports = pagerank;
 //var scores = pagerank({1: [2, 3, 4], 2: [3], 3: [4], 4: []}, {alpha: 0.9});
 //console.log(scores);
 //
-//var scores = pagerank({'foo': ['bar', 'hoge'], 'bar': [], 'hoge': ['foo']}, {});
+//var scores = pagerank({'foo': ['bar', 'hoge'], 'bar': [], 'hoge': ['foo']});
 //console.log(scores);

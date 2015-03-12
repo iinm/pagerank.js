@@ -8,7 +8,7 @@ The code is based on [networkx.pagerank](https://github.com/networkx/networkx/bl
 
 ```
 // foo -> bar, foo -> hoge, hoge -> foo
-var scores = pagerank({'foo': ['bar', 'hoge'], 'bar': [], 'hoge': ['foo']}, {});
+var scores = pagerank({'foo': ['bar', 'hoge'], 'bar': [], 'hoge': ['foo']});
 console.log(scores);
 
 { foo: 0.39361741945785234,

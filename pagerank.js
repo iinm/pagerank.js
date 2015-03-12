@@ -111,6 +111,9 @@ function pagerank(G, params) {
   return x;
 }
 
+// node.js
+module.exports = pagerank;
+
 // test
 //var scores = pagerank({1: [2, 3, 4], 2: [3], 3: [4], 4: []}, {alpha: 0.9});
 //console.log(scores);

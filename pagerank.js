@@ -5,10 +5,17 @@
 
 function pagerank(G, params) {
 
-  // set default parameter
+  // set default parameters
   if (params.alpha == null) params.alpha = 0.85;
   if (params.tol == null) params.tol = 1.0e-6;
   if (params.max_iter == null) params.max_iter = 100;
+
+  // tools
+  var sum = function(xs) {
+    return xs.reduce(function(prev, current, idx, xs) {
+      return prev + current;
+    });
+  };
 
   var N = Object.keys(G).length
   if (N == 0) return {};
@@ -34,12 +41,9 @@ function pagerank(G, params) {
   }
   else {
     // Normalized nstart vector
-    var sum = 0.0;
-    Object.values(params.nstart).forEach(function(x) {
-      sum += x;
-    });
+    var sum_ = sum(Object.values(params.nstart));
     for (var node in params.nstart)
-      x[node] = params.nstart[node] / sum;
+      x[node] = params.nstart[node] / sum_;
   }
   //console.log(x);
 
@@ -50,12 +54,9 @@ function pagerank(G, params) {
   }
   else {
     // TODO: check missing nodes
-    var sum = 0.0;
-    Object.values(params.personalization).forEach(function(x) {
-      sum += x;
-    });
+    var sum_ = sum(Object.values(params.personalization));
     for (var node in params.personalization)
-      p[node] = params.personalization[node] / sum;
+      p[node] = params.personalization[node] / sum_;
   }
 
   var dangling_weights = {};
@@ -65,12 +66,9 @@ function pagerank(G, params) {
   }
   else {
     // TODO: check missing nodes
-    var sum = 0.0;
-    Object.values(params.dangling).forEach(function(x) {
-      sum += x;
-    });
+    var sum_ = sum(Object.values(params.dangling));
     for (var node in params.dangling)
-      dangling_weights[node] = params.dangling[node] / sum;
+      dangling_weights[node] = params.dangling[node] / sum_;
   }
   var dangling_nodes = [];
   for (var node in W) {
@@ -84,11 +82,11 @@ function pagerank(G, params) {
     var xlast = x;
     x = {};
     for (var node in xlast) x[node] = 0.0;
-    var sum = 0.0;
+    var sum_ = 0.0;
     dangling_nodes.forEach(function(node) {
-      sum += xlast[node]
+      sum_ += xlast[node]
     });
-    var danglesum = params.alpha * sum;
+    var danglesum = params.alpha * sum_;
 
     for (var node in x) {
       // this matrix multiply looks odd because it is

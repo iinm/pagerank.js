@@ -2,7 +2,7 @@
 
 PageRank in JavaScript
 
-The code is based on [networkx.pagerank](https://github.com/networkx/networkx/blob/master/networkx/algorithms/link_analysis/pagerank_alg.py).
+The code is based on [networkx.pagerank](https://github.com/networkx/networkx/blob/master/networkx/algorithms/link_analysis/pagerank_alg.py) (Python).
 
 ## Usage
 

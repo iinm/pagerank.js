@@ -1,6 +1,6 @@
 // pagerank.js
 //
-// based on networkx.pagerank (Python)
+// based on networkx.pagerank 1.9.1 (Python)
 // https://github.com/networkx/networkx/blob/master/networkx/algorithms/link_analysis/pagerank_alg.py
 
 function pagerank(G, params) {

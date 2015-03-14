@@ -1,9 +1,10 @@
 // pagerank.js
-//
-// based on networkx.pagerank 1.9.1 (Python)
-// https://github.com/networkx/networkx/blob/master/networkx/algorithms/link_analysis/pagerank_alg.py
+// Copyright 2015 Shumpei IINUMA
+// pagerank.js is freely distributable under the terms of the MIT license.
 
 function pagerank(G, params) {
+  // based on networkx.pagerank 1.9.1 (Python)
+  // https://github.com/networkx/networkx/blob/master/networkx/algorithms/link_analysis/pagerank_alg.py
 
   // set default parameters
   if (params == null) params = {};

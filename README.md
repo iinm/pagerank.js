@@ -6,7 +6,7 @@ The code is based on [networkx.pagerank](https://github.com/networkx/networkx/bl
 
 ## Usage
 
-```
+```javascript
 // foo -> bar, foo -> hoge, hoge -> foo
 var scores = pagerank({'foo': ['bar', 'hoge'], 'bar': [], 'hoge': ['foo']});
 console.log(scores);

@@ -6,7 +6,7 @@ The code is based on [networkx.pagerank](https://github.com/networkx/networkx/bl
 
 ## Usage
 
-```
+```javascript
 // foo -> bar, foo -> hoge, hoge -> foo
 var scores = pagerank({'foo': ['bar', 'hoge'], 'bar': [], 'hoge': ['foo']});
 console.log(scores);
@@ -24,3 +24,7 @@ console.log(scores);
   '4': 0.42481640074065163 }
 
 ```
+
+## Application example
+
+- [lexrank.js](https://github.com/iinm/lexrank.js) - a building block for text summarization.
